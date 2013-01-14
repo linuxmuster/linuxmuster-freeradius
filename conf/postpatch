@@ -1,0 +1,25 @@
+# patch supplemental things not patched by setup automatically on first time install
+if [ "$1" = "--first" ]; then
+
+ # random radiussecret
+ radiussecret=`pwgen 8 1 s`
+
+ now=`date`
+ for i in *.target; do
+  configfile=`cat $i`
+  sed -e "s|@@package@@|linuxmuster-setup|
+          s|@@date@@|$now|
+          s|@@radiussecret@@|$radiussecret|" -i $configfile
+ done
+
+fi
+
+# repair permissions
+chmod 640 /etc/freeradius/clients.conf
+chmod 640 /etc/freeradius/radiusd.conf
+chown root:freerad /etc/freeradius/clients.conf
+chown root:freerad /etc/freeradius/radiusd.conf
+
+# start radius server
+/etc/init.d/freeradius start
+

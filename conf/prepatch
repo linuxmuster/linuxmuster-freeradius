@@ -1,0 +1,26 @@
+# stop radius server
+/etc/init.d/freeradius stop
+
+# not on first time install
+if [ "$1" != "--first" ]; then
+
+ # prevent config templates from being patched
+ for i in *.target; do
+  mv $i $i.nopatch
+ done
+
+ # patch clients.conf if ipcopip has changed
+ if [ "$ipcopip" != "$ipcopip_old" ]; then
+  backup_file /etc/freeradius/clients.conf
+  sed -e "s|^client $ipcopip_old|client $ipcopip|
+          s|ipaddr =.*|ipaddr = $ipcopip|" -i /etc/freeradius/clients.conf
+ fi
+
+ # patch radiusd.conf if domainname/basedn has changed
+ if [ "$basedn" != "$basedn_old" ]; then
+  backup_file /etc/freeradius/radiusd.conf
+  sed -e "s|$basedn_old|$basedn|g" -i /etc/freeradius/radiusd.conf
+ fi
+
+fi
+

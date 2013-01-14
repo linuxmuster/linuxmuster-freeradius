@@ -1,0 +1,43 @@
+linuxmuster-freeradius (0.2.0-2precise0) precise; urgency=low
+
+  * postinst: creating dummy snmp.conf.
+
+ -- Thomas Schmitt <tschmitt@linuxmuster.de>  Mon, 15 Oct 2012 14:45:00 +0200
+
+linuxmuster-freeradius (0.2.0-1precise0) precise; urgency=low
+
+  * rebuild for precise.
+
+ -- Thomas Schmitt <tschmitt@linuxmuster.de>  Thu, 27 Sep 2012 18:56:00 +0200
+
+linuxmuster-freeradius (0.2.0-lenny0) lenny; urgency=low
+
+  * modified config templates according to lenny's version of freeradius.
+
+ -- Thomas Schmitt <schmitt@lmz-bw.de>  Wed, 31 Mar 2010 17:38:13 +0200
+
+linuxmuster-freeradius (0.1.0-3) unstable; urgency=low
+
+  * postinst: minor modifications concercing to freeradius directory permissions and
+    installation messages.
+
+ -- Thomas Schmitt <schmitt@lmz-bw.de>  Sat, 28 Feb 2009 14:18:50 +0100
+
+linuxmuster-freeradius (0.1.0-2) unstable; urgency=low
+
+  * postinst: replacing clients.conf on first time installation
+
+ -- Thomas Schmitt <schmitt@lmz-bw.de>  Mon, 09 Feb 2009 17:47:32 +0100
+
+linuxmuster-freeradius (0.1.0-1) unstable; urgency=low
+
+  * minor improvements in postinst concerning to clients.conf update
+
+ -- Thomas Schmitt <schmitt@lmz-bw.de>  Sat, 07 Feb 2009 14:15:22 +0100
+
+linuxmuster-freeradius (0.0.1-1) unstable; urgency=low
+
+  * initial release
+
+ -- Thomas Schmitt <schmitt@lmz-bw.de>  Tue, 27 Jan 2009 14:54:57 +0100
+

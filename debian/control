@@ -1,0 +1,14 @@
+Source: linuxmuster-freeradius
+Section: admin
+Priority: optional
+Maintainer: Thomas Schmitt <schmitt@lmz-bw.de>
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 4.1.0)
+
+Package: linuxmuster-freeradius
+Architecture: all
+Section: admin
+Priority: optional
+Depends: pwgen, freeradius, freeradius-ldap, linuxmuster-base (>=1.4.44)
+Description: linuxmuster freeradius metapackage
+ This package configures the freeradius server.
